@@ -1,153 +1,173 @@
 {
-  "users": [
+  "drivers": [
     {
-      "id": "1",
-      "email": "jane.doe@example.com",
-      "password": "hashedpassword123",
-      "role": "candidate",
-      "created_at": "2024-01-15T09:00:00Z"
+      "id": 1,
+      "email": "driver@gmail.com",
+      "password": "123",
+      "firstName": "waos",
+      "lastName": "dasd",
+      "phone": "999111222",
+      "vehicles_owned": [
+        1
+      ],
+      "assignment_requests_sent": [
+        1
+      ],
+      "maintenance_requests_received": [
+        1
+      ]
     },
     {
-      "id": "2",
-      "email": "employer1@company.com",
-      "password": "hashedpassword456",
-      "role": "employer",
-      "created_at": "2024-01-20T12:30:00Z"
-    }
-  ],
-  "candidate_profiles": [
-    {
-      "id": "1",
-      "user_id": 1,
-      "name": "Jane Doe",
-      "publicationNumber": "Publicación 1",
-      "cv": "Jane_Doe_CV.pdf",
-      "posible": false
+      "id": 2,
+      "email": "driver2@gmail.com",
+      "password": "123",
+      "firstName": "Ana",
+      "lastName": "Torres",
+      "phone": "988777666",
+      "vehicles_owned": [],
+      "assignment_requests_sent": [],
+      "maintenance_requests_received": []
     },
     {
-      "id": "2",
-      "user_id": 2,
-      "name": "Carlos León",
-      "publicationNumber": "Publicación 2",
-      "cv": "Carlos_Leon_CV.pdf",
-      "posible": true
+      "id": 3,
+      "email": "driver3@gmail.com",
+      "password": "123",
+      "firstName": "Carlos",
+      "lastName": "Zevallos",
+      "phone": "977555444",
+      "vehicles_owned": [],
+      "assignment_requests_sent": [],
+      "maintenance_requests_received": []
+    }
+  ],
+  "mechanics": [
+    {
+      "id": 1,
+      "email": "mechanic@gmail.com",
+      "password": "123",
+      "firstName": "Andres",
+      "lastName": "Vivanco",
+      "phone": "944333222",
+      "vehicles_assigned": [
+        1
+      ],
+      "assignment_requests_received": [
+        1
+      ],
+      "maintenance_requests_sent": [
+        1
+      ],
+      "inventories": [
+        1,
+        2
+      ]
     },
     {
-      "id": "3",
-      "user_id": 3,
-      "name": "Lucía Torres",
-      "publicationNumber": "Publicación 3",
-      "cv": "Lucia_Torres_CV.pdf",
-      "posible": false
+      "id": 2,
+      "email": "mechanic2@gmail.com",
+      "password": "123",
+      "firstName": "Sandra",
+      "lastName": "Meza",
+      "phone": "933111000",
+      "vehicles_assigned": [],
+      "assignment_requests_received": [],
+      "maintenance_requests_sent": [],
+      "inventories": []
     },
     {
-      "id": "4",
-      "user_id": 4,
-      "name": "Pedro Gómez",
-      "publicationNumber": "Publicación 4",
-      "cv": "Pedro_Gomez_CV.pdf",
-      "posible": true
+      "id": 3,
+      "email": "mechanic3@gmail.com",
+      "password": "123",
+      "firstName": "Lucía",
+      "lastName": "Fernández",
+      "phone": "922999888",
+      "vehicles_assigned": [],
+      "assignment_requests_received": [],
+      "maintenance_requests_sent": [],
+      "inventories": []
+    }
+  ],
+  "vehicles": [
+    {
+      "id": 1,
+      "make": "Honda",
+      "model": "Civic",
+      "year": "2011",
+      "plate": "DEF102",
+      "driverId": 1,
+      "mechanicId": 1,
+      "maintenances": [
+        1
+      ]
+    }
+  ],
+  "assignment_requests": [
+    {
+      "id": 1,
+      "description": "wasa",
+      "vehicleId": 1,
+      "driverId": 1,
+      "mechanicId": 1,
+      "accepted": true
+    }
+  ],
+  "maintenance_requests": [
+    {
+      "id": 1,
+      "title": "Necesita aceite",
+      "description": "Se cambiará el aceite",
+      "budget": "1",
+      "vehicleId": 1,
+      "driverId": 1,
+      "mechanicId": 1,
+      "accepted": true
+    }
+  ],
+  "maintenances": [
+    {
+      "id": 1,
+      "title": "Necesita aceite",
+      "description": "Se cambiará el aceite",
+      "budget": "1",
+      "vehicleId": 1,
+      "mechanicId": 1,
+      "driverId": 1,
+      "requestId": 1,
+      "completed": false
+    }
+  ],
+  "inventories": [
+    {
+      "id": 1,
+      "title": "Cambio aceite",
+      "mechanicId": 1,
+      "items": [
+        1
+      ]
     },
     {
-      "id": "5",
-      "user_id": 5,
-      "name": "María Fernández",
-      "publicationNumber": "Publicación 5",
-      "cv": "Maria_Fernandez_CV.pdf",
-      "posible": true
+      "id": 2,
+      "title": "1",
+      "mechanicId": 1,
+      "items": [
+        2
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "name": "Filtro de aceite",
+      "description": "Fram PH7317",
+      "quantity": 1,
+      "inventoryId": 1
     },
     {
-      "id": "6",
-      "user_id": 6,
-      "name": "José Salazar",
-      "publicationNumber": "Publicación 6",
-      "cv": "Jose_Salazar_CV.pdf",
-      "posible": false
-    }
-  ],
-  "employer_profiles": [
-    {
-      "id": "1",
-      "user_id": 2,
-      "company_name": "TechCorp",
-      "description": "A leading tech solutions provider.",
-      "logo_url": "https://example.com/logo.png",
-      "website": "https://techcorp.com"
-    }
-  ],
-  "job_offers": [
-    {
-      "id": "1",
-      "employer_id": 1,
-      "title": "Junior Data Analyst",
-      "description": "Analyze datasets to support business decisions.",
-      "requirements": "Bachelor's degree in related field, SQL knowledge",
-      "location": "Remote",
-      "salary_range": "2500-3500",
-      "status": "Activa",
-      "created_at": "2024-02-01T08:00:00Z",
-      "applicationCount": 0
-    }
-  ],
-  "applications": [
-    {
-      "id": "1",
-      "job_offer_id": 1,
-      "candidate_id": 1,
-      "application_date": "2024-02-05T10:15:00Z",
-      "status": "pending"
-    }
-  ],
-  "messages": [
-    {
-      "id": "1",
-      "application_id": 1,
-      "sender_id": 1,
-      "receiver_id": 2,
-      "content": "Hello, I’m interested in the Data Analyst position.",
-      "sent_at": "2024-02-05T11:00:00Z"
-    }
-  ],
-  "interviews": [
-    {
-      "id": "1",
-      "employer_id": 1,
-      "candidate_id": 1,
-      "job_offer_id": 1,
-      "scheduled_date": "2024-02-10T14:00:00Z",
-      "location": "Zoom",
-      "interview_mode": "online",
-      "status": "scheduled",
-      "notes": "Candidate seems promising."
-    }
-  ],
-  "evaluations": [
-    {
-      "id": "1",
-      "interview_id": 1,
-      "candidate_id": 1,
-      "rating": 4.5,
-      "comments": "Strong analytical skills and communication.",
-      "evaluation_date": "2024-02-10T15:30:00Z"
-    }
-  ],
-  "membership_plans": [
-    {
-      "id": "1",
-      "name": "Basic Plan",
-      "description": "Access to up to 5 job postings.",
-      "price": 49.99,
-      "duration_days": 30
-    }
-  ],
-  "employer_memberships": [
-    {
-      "id": "1",
-      "employer_id": 1,
-      "membership_plan_id": 1,
-      "start_date": "2024-01-25T00:00:00Z",
-      "end_date": "2024-02-24T00:00:00Z",
-      "is_active": true
+      "id": 2,
+      "name": "Aceite de motor",
+      "description": "Castrol GTX Full Synthetic",
+      "quantity": 1,
+      "inventoryId": 2
     }
   ]
 }
